@@ -100,6 +100,9 @@ strong {
   h5 {
     font-size: 15px;
   }
+  p {
+    line-height: 1.0;
+  }
 }
 
 /* header */
@@ -128,14 +131,20 @@ header {
 
 nav {
   margin-right: 24px;
-}
-
-ul {
   display: flex;
 }
 
-li {
+nav a {
     margin-left: 16px;
+    color: hsl(168, 44%, 48%);
+}
+
+nav a:hover {
+    color: hsl(207, 14%, 37%);
+}
+
+nav a:active {
+  color: hsl(3, 53%, 51%);
 }
 
 @media only screen and (max-width: 470px) {
@@ -147,11 +156,17 @@ li {
     width: 100%;
     justify-content: space-between;
   }
+
   .logotype img:nth-child(1n+2) {
     display: inline;
   }
+/* tried to make svg img change color
 
-  nav ul {
+.logotype img:nth-child(1n+2):hover {
+  fill: hsl(168, 44%, 48%);
+}
+*/
+  nav a {
     display: none;
   }
 }
@@ -180,6 +195,7 @@ button {
   background-color: hsl(168, 44%, 48%);
   color: white;
   padding: 8px;
+  transition: background-color 200ms ease;
 }
 
 button:hover {
@@ -189,29 +205,41 @@ button:hover {
 button:active {
   background-color: hsl(3, 53%, 51%);
 }
+
+@media only screen and (max-width: 1024px){
+  .top-right p {
+    padding: 12px 16px 8px 0px;
+  }
+}
+
 @media only screen and (max-width: 470px) {
   .top.section {
     flex-direction: column;
   }
+
   .left-column {
     width: 100%;
     padding: 0px;
   }
+
   .top-right {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .top-right h1 {
     padding: 32px 16px;
   }
+/* Not sure why p element is disappearing. */
   .top-right p {
     padding: 0px 16px;
   }
+
   .top-right button {
     width: 100%;
-    margin: 24px 16px 32px 16px;
+    margin: 0px 0px 32px 0px;
   }
 }
 /* second-section */
@@ -255,6 +283,15 @@ button:active {
   padding-right: 16px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .left-column h1 {
+    padding-top: 20px;
+  }
+
+  .left-column p {
+    padding: 16px 0px;
+  }
+}
 @media only screen and (max-width: 470px) {
   .second.section .left-column {
     display: none;
@@ -304,6 +341,7 @@ button:active {
 .third.section h1 {
   margin: 32px;
 }
+
 .courses {
   display: flex;
   flex-direction: row;
@@ -316,7 +354,6 @@ button:active {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
   width: 27%;
   overflow: hidden;
   margin: 0px 16px 32px 16px;
@@ -342,6 +379,7 @@ button:active {
 .course h3 {
   margin: 16px 0px 0px 16px;
 }
+
 .course h5 {
   margin: 8px 16px;
 }
@@ -349,14 +387,33 @@ button:active {
 .course p {
   margin: 0px 16px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .courses {
+    margin: 0px 24px;
+  }
+
+  .course {
+    margin: 0px 12px 24px 12px;
+    padding-bottom: 16px;
+  }
+
+  .course h3 {
+    margin: 0px 0px 0px 16px;
+  }
+}
+
 @media only screen and (max-width: 470px) {
   .third.section {
     width: 100%;
-    padding: 32px 16px;
+    padding-top: 16px;
+    padding-bottom: 32px;
   }
+
   .third.section h1 {
     margin: 0px 0px 16px 0px;
   }
+
   .courses {
     flex-direction: column;
     flex-wrap: nowrap;
@@ -374,7 +431,7 @@ button:active {
   }
 
   .course:nth-child(2n+2) {
-    background-color: hsl(48, 28%, 86%);
+    background-color: hsl(43, 28%, 95%);
   }
 
   .course:first-child {
@@ -384,11 +441,13 @@ button:active {
   .course:last-child {
     margin-bottom: 0px;
   }
+
   .course img, h5, p {
     display: none;
   }
+
   .course h3 {
-    margin: 16px 16px 24px 16px;
+    margin: 16px;
   }
 }
 
@@ -396,7 +455,7 @@ button:active {
 .bottom.section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .bottom.section h1 {
@@ -440,13 +499,16 @@ video {
   .bottom.section h1 {
     margin: 32px 0px 16px 0px;
   }
+
   .columns {
     justify-content: center;
   }
+
   .bottom-left {
     width: 100%;
     padding: 0px 0px 24px 0px;
   }
+
   .bottom-left h3, p, .bottom-right {
     display: none;
   }
@@ -461,21 +523,38 @@ footer {
 
 .links a {
   margin-left: 16px;
-  color: white;
+  color: hsl(48, 28%, 95%);
+}
+
+.links a:hover {
+  color: hsl(168, 44%, 48%);
+}
+
+.links a:active {
+  color: hsl(3, 53%, 51%);
 }
 
 footer p {
-  color: white;
+  color: hsl(48, 28%, 86%);
 }
+
+@media only screen and (max-width: 1024px){
+  footer {
+    padding: 16px 8px;
+  }
+}
+
 @media only screen and (max-width: 470px) {
   footer {
     justify-content: flex-start;
     padding: 16px;
   }
+
   footer p {
     display: flex;
     font-size: 16px;
   }
+
   .links {
     display: none;
   }
